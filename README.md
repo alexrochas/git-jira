@@ -21,6 +21,20 @@ Now just use it as you would with *git commit*.
 ~/[some_path]$ git-jira "commit message" 
 ```
 
+OR
+
+Add an alias to your git global configuration:
+
+```bash
+~/$ git config --global alias.commit-jira '!python3 /[path_to_script]/git-jira/git_commit.py'
+```
+
+And the usage:
+
+```bash
+~/[some_path]$ git commit-jira "commit message"
+```
+
 And voilà!
 
 ## Meta
