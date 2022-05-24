@@ -24,7 +24,7 @@ def fetch_branch_name():
 
 @print_error
 def extract_ticket_number(branch_name):
-    matches = re.findall('((?:GB|gb)-\\d{4})', branch_name)
+    matches = re.findall('(.{3}-\\d{3})', branch_name)
     if matches:
         return matches[0]
     else:
@@ -40,7 +40,7 @@ if __name__ == '__main__':
     commit_msg = sys.argv[1]
     ticket_number = extract_ticket_number(fetch_branch_name())
     if ticket_number:
-        commit("{} - {}".format(ticket_number, commit_msg))
+        commit("{} {}".format(ticket_number, commit_msg))
     else:
         commit("{}".format(commit_msg))
 
