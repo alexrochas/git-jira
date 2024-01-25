@@ -24,7 +24,7 @@ def fetch_branch_name():
 
 @print_error
 def extract_ticket_number(branch_name):
-    matches = re.findall('(.{3}-\\d{3})', branch_name)
+    matches = re.findall('(^[A-Z]+-[0-9]+)', branch_name)
     if matches:
         return matches[0]
     else:
